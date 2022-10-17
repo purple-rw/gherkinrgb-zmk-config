@@ -1,0 +1,9 @@
+# Copyright (c) 2022 purple-rw
+# SPDX-License-Identifier: MIT
+
+if SHIELD_GHERKINRGB
+
+config ZMK_KEYBOARD_NAME
+    default "Gherkin RGB"
+
+endif
