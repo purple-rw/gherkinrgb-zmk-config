@@ -305,7 +305,7 @@
     &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none      &to BASE     &to QWRTY    &to HNSDN    &none
     &out OUT_USB    &out OUT_BLE    &none           &trans          &none           &none      &trans       &none        &reset       &bootloader
             >;
-==
+
         };
     };
 };
