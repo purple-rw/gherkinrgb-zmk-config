@@ -161,14 +161,16 @@
 // -------------------------------------------------------------
 // |<- Disp+ ->|     |     |     |     |    BT4   BT5   BT6    |
 // |<- Disp- ->|     |     |     |     |     |     |     |     |
-// |     |     |     |     |     |     |     |     |     |     |
+// |     |     |     |     |<-RGBTogl->|     |     |     |     |
 // -------------------------------------------------------------
-            combo_bt4   { timeout-ms = <50>; key-positions = < 6  7>; bindings = <&bt BT_SEL 4>;  layers = <ADJST>; };
-            combo_bt5   { timeout-ms = <50>; key-positions = < 7  8>; bindings = <&bt BT_SEL 5>;  layers = <ADJST>; };
-            combo_bt6   { timeout-ms = <50>; key-positions = < 8  9>; bindings = <&bt BT_SEL 6>;  layers = <ADJST>; };
+            combo_bt4   { timeout-ms = <50>; key-positions = < 6  7>; bindings = <&bt BT_SEL 4>;    layers = <ADJST>; };
+            combo_bt5   { timeout-ms = <50>; key-positions = < 7  8>; bindings = <&bt BT_SEL 5>;    layers = <ADJST>; };
+            combo_bt6   { timeout-ms = <50>; key-positions = < 8  9>; bindings = <&bt BT_SEL 6>;    layers = <ADJST>; };
 
-            combo_dpinc { timeout-ms = <50>; key-positions = < 1  2>; bindings = <&kp C_BRI_INC>; layers = <ADJST>; };
-            combo_dpdec { timeout-ms = <50>; key-positions = <11 12>; bindings = <&kp C_BRI_DEC>; layers = <ADJST>; };
+            combo_dpinc { timeout-ms = <50>; key-positions = < 1  2>; bindings = <&kp C_BRI_INC>;   layers = <ADJST>; };
+            combo_dpdec { timeout-ms = <50>; key-positions = <11 12>; bindings = <&kp C_BRI_DEC>;   layers = <ADJST>; };
+            
+            combo_toggl { timeout-ms = <50>; key-positions = <24 25>; bindings = <&rgb_ug RGB_TOG>; layers = <ADJST>; };
         };
     };
 
@@ -280,6 +282,7 @@
         };
 
         adjust_layer {
+/*
 // -------------------------------------------------------------
 // |Bri+ |     |     |     |Toggl|BTClr| BT0 | BT1 | BT2 | BT3 |
 // |Bri- |     |     |     |     |     |Colmk|Qwrty|HnsDn|     |
@@ -290,19 +293,19 @@
     &bl BL_DEC   &none        &none   &none   &none      &none      &to BASE     &to QWRTY    &to HNSDN    &none
     &out OUT_USB &out OUT_BLE &none   &trans  &none      &none      &trans       &none        &reset       &bootloader
             >;
-/*
+*/
 //  v----------- RGB -----------v
 // -------------------------------------------------------------
-// |Bri+ |Sat+ |Hue+ |Ani+ |Toggl|BTClr| BT0 | BT1 | BT2 | BT3 |
-// |Bri- |Sat- |Hue- |Ani- |BLtog|     |Colmk|Qwrty|HnsDn|     |
+// |Bri+ |Sat+ |Hue+ |Spd+ |Ani+ |BTClr| BT0 | BT1 | BT2 | BT3 |
+// |Bri- |Sat- |Hue- |Spd- |Ani- |     |Colmk|Qwrty|HnsDn|     |
 // | USB | BLE |     | *** |     |     | *** |     |Reset|BootL|
 // -------------------------------------------------------------
             bindings = <
-    &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_TOG &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
-    &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &bl BL_TOG      &none      &to BASE     &to QWRTY    &to HNSDN    &none
+    &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_SPI &rgb_ug RGB_EFF &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+    &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_SPD &rgb_ug RGB_EFR &none      &to BASE     &to QWRTY    &to HNSDN    &none
     &out OUT_USB    &out OUT_BLE    &none           &trans          &none           &none      &trans       &none        &reset       &bootloader
             >;
-*/
+==
         };
     };
 };
